@@ -1,0 +1,4 @@
+pogo
+====
+
+Core project launcher
