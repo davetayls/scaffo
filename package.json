@@ -1,0 +1,19 @@
+{
+  "name": "pogo",
+  "version": "0.0.1",
+  "author": "davetayls <dave@the-taylors.org>",
+  "description": "Code project launcher",
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pogokid/pogo.git"
+  },
+  "keywords": [
+    "scaffolding"
+  ],
+  "dependencies": {
+    "grunt-contrib-copy": "0.3.x"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
