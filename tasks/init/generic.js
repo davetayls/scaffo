@@ -1,3 +1,4 @@
+
 exports.description = "Pogo: generic scaffolding";
 exports.notes = "Generates scaffolding for a generic project";
 
@@ -28,6 +29,9 @@ exports.template = function(grunt, init, done) {
     grunt.helper("prompt_for", "templating")
 
   ], function(err, props) {
+
+    console.log(props);
+
     // Files to copy (and process).
     var files = init.filesToCopy(props);
 

@@ -1,0 +1,3 @@
+/**
+ * Require JS config file
+ */
