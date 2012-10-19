@@ -15,7 +15,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: "<config:lint.files>",
+      files: [
+        "<config:lint.files>",
+        "ui/styles/**/*.styl"
+      ],
       tasks: "default"
     },
 
@@ -41,7 +44,11 @@ module.exports = function(grunt) {
       dist: {
         options: {
           compress: true,
-          paths: [ 'ui/styles' ]
+          paths: [
+            'ui/styles',
+            'ui/lib',
+            'node_modules/nib/lib'
+          ]
         },
         files: {
           'ui/dist/styles.css': 'ui/styles/index.styl'

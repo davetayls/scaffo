@@ -17,7 +17,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: "<config:lint.files>",
+      files: [
+        "<config:lint.files>",
+        'tasks/init/**'
+      ],
       tasks: "default copy"
     },
 
