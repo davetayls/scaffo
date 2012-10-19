@@ -24,13 +24,11 @@ exports.template = function(grunt, init, done) {
 
   grunt.helper("prompt", {}, [
 
-    grunt.helper("prompt_for", "css"),
-    grunt.helper("prompt_for", "responsive"),
-    grunt.helper("prompt_for", "templating")
+    // grunt.helper("prompt_for", "css"),
+    // grunt.helper("prompt_for", "responsive"),
+    // grunt.helper("prompt_for", "templating")
 
   ], function(err, props) {
-
-    console.log(props);
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
