@@ -1,0 +1,150 @@
+/**
+ * Brand
+ * -----
+ * These styles are global styles and generic to fit the general
+ * brand of a website.
+ *
+ * They are grouped in a slightly simplified set of groupings as
+ * the element index on http://html5doctor.com/.
+ *
+ * eg: root, sections, grouping, tables, forms, embedded and text-level
+ *
+ * With the following extra sections:
+ *  - fonts
+ *
+ */
+
+
+/*
+    => root
+    1. get's the root font-size to be the $font-size--base
+    2. sets the baseline globally
+    3. set the global body color
+    --------------------------------------------------*/
+html {
+    font-size: (100%/16*$font-size--base); /* 1 */
+    baseline-height($font-size--base);     /* 2 */
+    color: $color--base;                   /* 3 */
+}
+
+/*
+    => sections
+ --------------------------------------------------*/
+address     { margin-bottom: 2px * $baseline; }
+
+
+/*
+    => grouping
+--------------------------------------------------*/
+p {
+    @extends .baseline-spaced;
+}
+p+p {
+}
+p:first-child   { margin-top: 0; }
+p:last-child {
+}
+
+blockquote {
+    @extends .baseline-spaced;
+    @extends .baseline-inset;
+}
+pre {
+    @extends .baseline-spaced;
+    @extends .baseline-inset;
+}
+
+dl {
+    @extends .baseline-spaced;
+}
+dt {
+    display: inline-block;
+    font-weight: bold;
+    padding:0 10px 0 0;
+}
+dd {
+}
+
+ol {
+    @extends .baseline-spaced;
+    padding: 0 0 0 (4px * $baseline);
+}
+ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ul {
+    @extends .baseline-spaced;
+    padding: 0 0 0 (4px * $baseline);
+}
+ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+li {
+    margin: 0; padding: 0;
+}
+
+/* when lists come straight after a paragraph */
+p+ul, p+ol      { padding-top: 0; }
+
+/*
+    => tables
+--------------------------------------------------*/
+
+/*
+    => forms
+--------------------------------------------------*/
+
+/*
+    => embedded
+--------------------------------------------------*/
+
+/*
+    => text-level
+--------------------------------------------------*/
+
+/** ==> headers
+    1. top margins align to baseline
+    2. first-child works in ie7
+    ---------------------------------------*/
+h1                  { font-size-rem: 20; margin: 0; }
+h2                  { font-size-rem: 18; margin: 0; }
+h3                  { font-size-rem: 16; margin: 0; }
+h4                  { font-size-rem: 16; margin: 0; }
+h5                  { font-size-rem: 16; margin: 0; }
+h6                  { font-size-rem: 16; margin: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6                  { margin-top: (2px * $baseline); } /* 1 */
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child      { margin-top: 0; }                /* 2 */
+
+/** ==> links
+    ---------------------------------------*/
+a            { text-decoration: underline; }
+a, a:link    { color: $color--accent; -webkit-tap-highlight-color: desaturate($color--accent, 30%); }
+a:visited    { color: darken($color--accent, 30); }
+
+a:focus,
+a:hover,
+a:active     { text-decoration: none;   }
+
+/*
+    => fonts
+--------------------------------------------------*/
+body,
+select,
+input,
+textarea {
+    font-family: Arial, Helvetica, "Nimbus Sans L", "Free Sans", Sans-Serif;
+}

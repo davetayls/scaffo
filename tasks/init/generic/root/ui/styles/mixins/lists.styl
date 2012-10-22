@@ -1,0 +1,23 @@
+
+/*
+	=> dl--margin
+	This creates a dl listing where the term has a
+	fixed width and the definition is inset from
+	that width
+--------------------------------------------------*/
+dl--margin($termWidth) {
+    @extends .baseline-spaced;
+    @extends .clearContainer;
+
+	dt {
+	    font-weight: bold;
+	    padding:0 10px 0 0;
+	    width: $termWidth;
+	    float: left;
+	    clear: left;
+	}
+	dd {
+		display: block;
+		margin-left: ($termWidth + $baseline--double);
+	}
+}

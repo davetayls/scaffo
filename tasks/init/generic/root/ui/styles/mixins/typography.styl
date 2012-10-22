@@ -1,0 +1,44 @@
+/**
+ * Typography
+ * ----------
+ * This holds a set of mixins useful for working with
+ * typography.
+ *
+ * It depends on the following variables to have been set:
+ *
+ *  - $font-size--base  The global base font-size for the page
+ *  - $baseline         The height of the baseline grid
+ *
+ */
+
+
+/*
+    => line-height
+    This renders a line-height as a unit-less number
+    which will multiply the element's font-size to
+    get the resulting line-height
+
+    This is used in conjunction with the baseline
+    and will calculate the multiplier of the baseline
+    to keep the line-height on the baseline grid
+--------------------------------------------------*/
+baseline-height($font-size)
+  line-height: (ceil($font-size / $baseline) * ($baseline / $font-size));
+
+baseline-grid()
+  background-image: linear-gradient(red 1px, transparent 1px);
+  background-size: 100px unit($baseline, 'px');
+  background-position: 0px (-($baseline/2px));
+
+/*
+    => font-size
+--------------------------------------------------*/
+font-size-rem($font-size)
+  font-size: ($font-size)px;
+  font-size: ($font-size / $font-size--base)rem;
+  baseline-height($font-size);
+
+font-size-em($font-size, $parent-font-size = $font-size--base)
+  font-size: ($font-size / $parent-font-size)em;
+  baseline-height($font-size)
+

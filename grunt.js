@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         "<config:lint.files>",
         'tasks/init/**'
       ],
-      tasks: "default copy"
+      tasks: "default"
     },
 
     jshint: {

@@ -1,0 +1,14 @@
+
+$baseline--double = 2*$baseline
+$baseline--doublepx = unit($baseline--double, 'px')
+$baseline--doublerem = ($baseline--double / $font-size--base)rem
+
+.baseline-grid {
+    baseline-grid();
+}
+.baseline-spaced {
+    margin: $baseline--doublerem 0;
+}
+.baseline-inset  {
+    padding: 0 $baseline--doublerem;
+}
