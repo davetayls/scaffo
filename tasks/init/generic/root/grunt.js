@@ -40,6 +40,39 @@ module.exports = function(grunt) {
       globals: {}
     },
 
+    // This task uses James Burke's excellent r.js AMD build tool.  In the
+    // future other builders may be contributed as drop-in alternatives.
+    requirejs: {
+      dist: {
+        options: {
+          mainConfigFile: "ui/scripts/config.js",
+          // output to
+          out: "ui/dist/main.js",
+
+          // config
+          baseUrl: "ui/scripts",
+          name: 'config'
+        }
+      }
+    },
+
+    // The concatenate task is used here to merge the almond require/define
+    // shim and the templates into the application code.  It's named
+    // dist/debug/require.js, because we want to only load one script file in
+    // index.html.
+    concat: {
+      dist: {
+        src: [
+          "ui/lib/almond.js",
+          "ui/dist/main.js"
+        ],
+
+        dest: "ui/dist/require.js",
+
+        separator: ";"
+      }
+    },
+
     stylus: {
       dist: {
         options: {
@@ -59,6 +92,7 @@ module.exports = function(grunt) {
   });
 
   // load npm tasks
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-stylus');
 
   // Default task.

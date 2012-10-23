@@ -1,3 +1,6 @@
+/*jshint node:true */
+
+var npm = require('npm');
 
 exports.description = "Pogo: generic scaffolding";
 exports.notes = "Generates scaffolding for a generic project";
@@ -35,6 +38,13 @@ exports.template = function(grunt, init, done) {
 
     // Actually copy (and process) files.
     init.copyAndProcess(files, props, {});
+
+    // install npm dependencies
+    // npm.load(conf, function (er) {
+    //   if (er) return errorHandler(er)
+    //     npm.commands[npm.command](npm.argv, errorHandler)
+    // });
+
 
     // All done!
     done();

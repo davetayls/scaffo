@@ -12,7 +12,8 @@
     "scaffolding"
   ],
   "dependencies": {
-    "grunt-contrib-copy": "0.3.x"
+    "grunt-contrib-copy": "0.3.x",
+    "npm": "1.x.x"
   },
   "devDependencies": {},
   "license": "MIT"
