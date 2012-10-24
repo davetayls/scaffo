@@ -5,6 +5,6 @@ require([
 function($){
 	"use strict";
 
-	alert('hello jQuery is a '+ typeof($));
+	// put application logic here
 
 });
