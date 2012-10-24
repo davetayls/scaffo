@@ -1,9 +1,14 @@
 {
   "name": "pogo",
-  "version": "0.0.1",
-  "author": "davetayls <dave@the-taylors.org>",
   "description": "Code project launcher",
-  "bin": {},
+  "version": "0.0.1",
+  "author": {
+    "name": "Dave Taylor",
+    "email": "dave.taylor@pogokid.com",
+    "url": "http://pogokid.com"
+  },
+  "bin": "bin/pogo",
+  "main": "grunt.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pogokid/pogo.git"
@@ -12,6 +17,7 @@
     "scaffolding"
   ],
   "dependencies": {
+    "grunt": "0.3.x",
     "grunt-contrib-copy": "0.3.x",
     "docpad-plugin-marked": "2.x.x",
     "grunt-docs": "0.3.x",

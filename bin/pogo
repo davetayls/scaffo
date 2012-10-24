@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+/*jshint node:true */
+var grunt = require("grunt"),
+    join = require('path').join,
+    gruntRoot = join(__dirname, '../')
+;
+grunt.cli({
+    config: gruntRoot + '/grunt.js',
+    npm: [gruntRoot]
+});
