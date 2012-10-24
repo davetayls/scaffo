@@ -1,0 +1,33 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie-old ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie-old ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie ie9"> <![endif]-->
+<!--[if gt IE 9]> <html lang="en" class="no-js ie"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+	<head>
+		{{#template "htmlhead"}}{{/template}}
+	</head>
+	<body>
+		{{#template "skipnav"}}{{/template}}
+
+		{{! header section with div inside to keep block behaviour in ie-old without JS }}
+		<header><div>
+			<!-- place header markup here -->
+		</div></header>
+
+		{{!
+			1. The main body section wrapped in ARIA role main for screen readers
+			2. #main id is only used so that the skip navigation link jumps to this point
+		}}
+		<div id="main" role="main">
+		{{{body}}}
+		</div>
+
+		{{! footer section with div inside to keep block behaviour in ie-old without JS }}
+		<footer><div>
+			<!-- footer markup here -->
+		</div></footer>
+
+		{{#template "scriptrefs"}}{{/template}}
+	</body>
+</html>

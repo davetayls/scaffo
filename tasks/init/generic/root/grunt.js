@@ -3,6 +3,10 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
+    volo: {
+      install: {}
+    },
     test: {
       files: ["test/**/*.js"]
     },
@@ -15,11 +19,18 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: [
-        "<config:lint.files>",
-        "ui/styles/**/*.styl"
-      ],
-      tasks: "default"
+      scripts: {
+        files: [
+          "<config:lint.files>"
+        ],
+        tasks: "scripts"
+      },
+      styles: {
+        files: [
+          "ui/styles/**/*.styl"
+        ],
+        tasks: "styles"
+      }
     },
 
     jshint: {
@@ -84,7 +95,9 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          'ui/dist/styles.css': 'ui/styles/index.styl'
+          'ui/dist/styles.css': 'ui/styles/index.styl',
+          'ui/dist/tablet.css': 'ui/styles/**/*.tablet.styl',
+          'ui/dist/desktop.css': 'ui/styles/**/*.desktop.styl'
         }
       }
     }
@@ -92,10 +105,16 @@ module.exports = function(grunt) {
   });
 
   // load npm tasks
+  grunt.loadNpmTasks('grunt-volo');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-stylus');
 
   // Default task.
-  grunt.registerTask("default", "lint stylus");
+  grunt.registerTask("default", "lint scripts styles");
+
+  // other tasks
+  grunt.registerTask("install", "volo:add");
+  grunt.registerTask("scripts", "requirejs concat");
+  grunt.registerTask("styles", "stylus");
 
 };

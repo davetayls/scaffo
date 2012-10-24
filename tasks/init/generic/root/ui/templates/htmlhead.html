@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+{{#description}}
+<meta name="description" content="{{description}}">
+{{/description}}
+{{#author}}
+<meta name="author" content="{{author}}">
+{{/author}}
+
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="/ui/dist/styles.css" />
+
+<link rel="stylesheet" href="/ui/dist/tablet.css" media="all and (min-width:768px)" />
+<link rel="stylesheet" href="/ui/dist/desktop.css" media="all and (min-width:990px)" />
+
+<!-- load all progressive styles for ie7/8 but not ie mobile: http://adactio.com/journal/4494/ -->
+<!--[if (IE 7|IE 8)&(!IEMobile)]>
+<link rel="stylesheet" href="/ui/dist/tablet.css" />
+<link rel="stylesheet" href="/ui/dist/desktop.css" />
+<![endif]-->
+
+<title>{{title}}</title>

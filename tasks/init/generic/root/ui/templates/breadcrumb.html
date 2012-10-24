@@ -1,0 +1,17 @@
+<ul class="breadcrumb">
+  {{#items}}
+    {{#url}}
+    <li>
+      <a href="{{url}}">
+    {{/url}}
+    {{^url}}
+    <li class="active">
+    {{/url}}
+        {{title}}
+    {{#url}}
+      </a>
+      <span class="divider">/</span>
+    {{/url}}
+    </li>
+  {{/items}}
+</ul>

@@ -1,0 +1,47 @@
+/**
+    => skipnav
+--------------------------------------------------*/
+.skipnav {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+
+	h2 {
+		position:absolute;
+		top: auto;
+		left: -10000px;
+		width: 1px;
+		height: 1px;
+	}
+	ul {
+		list-style: none;
+		margin:0;
+		position:absolute;
+	}
+	li{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	a {
+		position:absolute;
+		display: block;
+		top: auto;
+		left: -10000px;
+		width: 1px;
+		height: 1px;
+	}
+	a:active,
+	a:focus {
+		z-index: 1000;
+		top: 0;
+		left: 0px;
+		width: 350px;
+		height: 20px;
+		background-color: white;
+		border: 1px dotted #ccc;
+		padding: 5px;
+	}
+}
+

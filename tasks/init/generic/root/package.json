@@ -8,7 +8,12 @@
         "grunt-contrib-requirejs": "0.3.x",
         "grunt-contrib-stylus": "0.3.x",
         "nib": "0.8.x",
-        "volo": "0.2.x"
+        "grunt-volo": "0.x.x",
+        "volo": "0.2.x",
+        "express": "3.x.x",
+        "underscore": "1.4.x",
+        "handlebars": "1.x.x",
+        "hbs": "1.x.x"
     },
     "devDependencies": { },
     "volo": {
@@ -16,5 +21,8 @@
         "dependencies": {
             "jquery": "jquery"
         }
+    },
+    "scripts": {
+        "install": "grunt install"
     }
 }
