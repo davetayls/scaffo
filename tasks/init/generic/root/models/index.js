@@ -1,7 +1,7 @@
 /*jshint node:true */
 var _ = require('underscore');
 
-exports.get = function(){
+exports.get = function(app){
 	"use strict";
 
 	var options = {};

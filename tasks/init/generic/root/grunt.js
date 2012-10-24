@@ -19,17 +19,17 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      scripts: {
-        files: [
-          "<config:lint.files>"
-        ],
-        tasks: "scripts"
-      },
       styles: {
         files: [
           "ui/styles/**/*.styl"
         ],
         tasks: "styles"
+      },
+      scripts: {
+        files: [
+          "<config:lint.files>"
+        ],
+        tasks: "scripts"
       }
     },
 
@@ -62,7 +62,8 @@ module.exports = function(grunt) {
 
           // config
           baseUrl: "ui/scripts",
-          name: 'config'
+          name: 'config',
+          optimize: 'none'
         }
       }
     },
@@ -118,7 +119,8 @@ module.exports = function(grunt) {
   grunt.registerTask("styles", "stylus");
 
   // watch tasks
-  grunt.registerTask("build-and-watch", "default watch");
+  grunt.registerTask("watch-dev", "default watch:styles");
+  grunt.registerTask("watch-dist", "default watch");
 
 
 };

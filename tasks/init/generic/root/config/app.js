@@ -30,24 +30,19 @@ exports.configure = function(express, app, rootDir){
     // in development environment
     app.configure('development', function(){
       app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-      app.set('view options', {
-        resourceRoot: ''
-      });
+      app.locals.development = true;
     });
 
     // you can specify specific options to test the code
     // in production environment
     app.configure('production', function(){
       app.use(express.errorHandler());
-      app.set('view options', {
-        resourceRoot: '/prod'
-      });
     });
 
     /**
      * Other Configuration
      */
-    templating.configure(rootDir);
+    templating.configure(app, rootDir);
     routes.configure(app, rootDir);
 
 };

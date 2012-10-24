@@ -3,17 +3,25 @@ var hbs        = require('hbs'), // handlebars templating
     handlebars = require('handlebars'),
     fs         = require('fs')
 ;
-exports.configure = function(rootDir){
+exports.configure = function(app, rootDir){
 	"use strict";
 
     /* partials */
     hbs.registerHelper('partial', function(name, items, context) {
         var tmpl = handlebars.compile(fs.readFileSync(rootDir + '/templates/partials/'+ name +'.html', 'utf8'));
-        return tmpl({ items: items });
+        return tmpl({
+            items: items,
+            context: this,
+            app: app.locals
+        });
     });
     hbs.registerHelper('template', function(name, items, context) {
         var tmpl = handlebars.compile(fs.readFileSync(rootDir + '/ui/templates/'+ name +'.html', 'utf8'));
-        return tmpl({ items: items });
+        return tmpl({
+            items: items,
+            context: this,
+            app: app.locals
+        });
     });
 
     /* blocks */
