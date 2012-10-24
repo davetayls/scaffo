@@ -24,6 +24,6 @@
         }
     },
     "scripts": {
-        "install": "grunt install"
+        "install": "pogo-scaffold install"
     }
 }

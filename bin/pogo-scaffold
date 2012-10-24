@@ -5,6 +5,4 @@ var grunt = require("grunt"),
     gruntRoot = join(__dirname, '../')
 ;
 grunt.npmTasks(gruntRoot);
-grunt.cli({
-    config: gruntRoot + '/grunt.js'
-});
+grunt.cli();
