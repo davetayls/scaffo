@@ -74,7 +74,7 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          "ui/lib/almond.js",
+          "ui/lib/require.js",
           "ui/dist/main.js"
         ],
 
@@ -116,5 +116,9 @@ module.exports = function(grunt) {
   grunt.registerTask("install", "volo:add");
   grunt.registerTask("scripts", "requirejs concat");
   grunt.registerTask("styles", "stylus");
+
+  // watch tasks
+  grunt.registerTask("build-and-watch", "default watch");
+
 
 };

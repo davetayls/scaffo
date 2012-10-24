@@ -49,17 +49,25 @@ module.exports = function(grunt) {
           "/Users/davetayls/.grunt/tasks/init/pogo.js": "tasks/init/generic.js"
         }
       }
+    },
+
+    docs: {
+      www: {
+        src: ['tasks/init/generic/docs/**/*.md'],
+        dest: 'tasks/init/generic/root/docs/'
+      }
     }
 
   });
 
   // load npm tasks
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-docs');
 
   // Load local tasks.
   grunt.loadTasks("tasks");
 
   // Default task.
-  grunt.registerTask("default", "lint test copy");
+  grunt.registerTask("default", "lint test docs copy");
 
 };

@@ -13,6 +13,8 @@
   ],
   "dependencies": {
     "grunt-contrib-copy": "0.3.x",
+    "docpad-plugin-marked": "2.x.x",
+    "grunt-docs": "0.3.x",
     "volo": "0.2.x",
     "npm": "1.x.x"
   },

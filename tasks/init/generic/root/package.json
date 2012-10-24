@@ -19,7 +19,8 @@
     "volo": {
         "baseUrl": "ui/lib",
         "dependencies": {
-            "jquery": "jquery"
+            "jquery": "jquery",
+            "require": "jrburke/requirejs"
         }
     },
     "scripts": {
