@@ -7,7 +7,7 @@
     "email": "dave.taylor@pogokid.com",
     "url": "http://pogokid.com"
   },
-  "bin": "bin/pogo",
+  "bin": "bin/pogo-scaffold",
   "main": "grunt.js",
   "repository": {
     "type": "git",
