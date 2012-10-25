@@ -28,6 +28,7 @@ exports.configure = function(express, app, rootDir){
       // if something goes wrong!
       app.use(function(err, req, res, next) {
           res.send(500, '<link rel="stylesheet" href="/ui/dist/styles.css" /><div style="padding:40px"><h1>Error</h1><pre><code>'+ err.message +'</code></pre></div>');
+          next(err);
       });
 
     });
