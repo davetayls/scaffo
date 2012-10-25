@@ -66,9 +66,8 @@ module.exports = function(grunt) {
 
   // Load local tasks.
   grunt.loadTasks("tasks");
-  grunt.registerTask("build", "lint test docs copy");
 
   // Default task.
-  grunt.registerTask("default", "init");
+  grunt.registerTask("build", "lint test docs");
 
 };
