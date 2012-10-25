@@ -12,7 +12,6 @@
         "volo": "0.2.x",
         "express": "3.x.x",
         "underscore": "1.4.x",
-        "handlebars": "1.x.x",
         "hbs": "https://github.com/davetayls/hbs/tarball/master"
     },
     "devDependencies": { },
