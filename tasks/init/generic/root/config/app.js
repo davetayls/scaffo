@@ -24,19 +24,12 @@ exports.configure = function(express, app, rootDir){
 
       // make the ui folder public
       app.use('/ui', express.static(rootDir + '/ui'));
-    });
 
-    // you can specify specific options to test the code
-    // in development environment
-    app.configure('development', function(){
-      app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-      app.locals.development = true;
-    });
+      // if something goes wrong!
+      app.use(function(err, req, res, next) {
+          res.send(500, '<link rel="stylesheet" href="/ui/dist/styles.css" /><div style="padding:40px"><h1>Error</h1><pre><code>'+ err.message +'</code></pre></div>');
+      });
 
-    // you can specify specific options to test the code
-    // in production environment
-    app.configure('production', function(){
-      app.use(express.errorHandler());
     });
 
     /**
