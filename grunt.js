@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     },
 
     h: {
-      install: "/tasks/init/generic/root/templates/docs/index.md"
+      install: "/tasks/init/generic/root/templates/docs/install.md"
     }
 
   });

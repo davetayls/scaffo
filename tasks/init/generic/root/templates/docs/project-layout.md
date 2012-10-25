@@ -1,23 +1,5 @@
-
-Prototype Build Framework
-=========================
-
-Installation
-------------
-
-### In terminal window
-
-	$ mkdir myPrototypeSite
-	$ cd myPrototypeSite
-	$ pogo-scaffold init:generic
-	...
-	$ npm install
-	$ pogo-scaffold watch-dev
-
-### Open a new terminal window
-
-	$ node app
-
+Project Scaffolding
+===================
 
 Project Layout
 --------------
