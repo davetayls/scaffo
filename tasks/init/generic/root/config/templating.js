@@ -18,8 +18,8 @@ exports.configure = function(app, rootDir){
         };
     }
 
-    var templateHelper = partial('/ui/templates/');
-    handlebars.registerHelper('template', templateHelper);
+    handlebars.registerHelper('partial', partial('/templates/partials/'));
+    handlebars.registerHelper('template', partial('/ui/templates/'));
 
     /* blocks */
     var blocks = {};
