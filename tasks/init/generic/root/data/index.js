@@ -5,7 +5,7 @@ exports.get = function(app){
 	"use strict";
 
 	var options = {};
-	require("fs").readdirSync("./models").forEach(function(file) {
+	require("fs").readdirSync("./data").forEach(function(file) {
 		_.extend(options, require("./" + file));
 	});
 	return options;
