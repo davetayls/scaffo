@@ -1,12 +1,14 @@
 /*jshint node:true */
 var hbs        = require('hbs'), // handlebars templating
-    handlebars = require('handlebars'),
+    handlebars = hbs.handlebars,
     fs         = require('fs')
 ;
 exports.configure = function(app, rootDir){
     "use strict";
 
-    /* partials */
+    /**
+     * Partials
+     */
     function partial (relativeDir) {
         return function(name, items, context) {
             var tmpl = handlebars.compile(fs.readFileSync(rootDir + relativeDir + name +'.html', 'utf8'));
@@ -18,10 +20,12 @@ exports.configure = function(app, rootDir){
         };
     }
 
-    handlebars.registerHelper('partial', partial('/templates/partials/'));
-    handlebars.registerHelper('template', partial('/ui/templates/'));
+    hbs.registerHelper('partial', partial('/templates/partials/'));
+    hbs.registerHelper('template', partial('/ui/templates/'));
 
-    /* blocks */
+    /**
+     * Blocks
+     */
     var blocks = {};
     // A helper which allows you to specify the
     // contents of an external {{{block "name"}}}
