@@ -51,23 +51,15 @@ module.exports = function(grunt) {
       }
     },
 
-    docs: {
-      www: {
-        src: ['tasks/init/generic/docs/**/*.md'],
-        dest: 'tasks/init/generic/root/docs/'
-      }
-    }
-
   });
 
   // load npm tasks
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-docs');
 
   // Load local tasks.
   grunt.loadTasks("tasks");
 
   // Default task.
-  grunt.registerTask("build", "lint test docs");
+  grunt.registerTask("build", "lint test");
 
 };
