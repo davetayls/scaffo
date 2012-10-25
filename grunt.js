@@ -51,6 +51,10 @@ module.exports = function(grunt) {
       }
     },
 
+    h: {
+      install: "/tasks/init/generic/root/templates/docs/index.md"
+    }
+
   });
 
   // load npm tasks
@@ -59,7 +63,10 @@ module.exports = function(grunt) {
   // Load local tasks.
   grunt.loadTasks("tasks");
 
-  // Default task.
+  // tasks
   grunt.registerTask("build", "lint test");
+
+  // Default task.
+  grunt.registerTask("default", "h:install");
 
 };
