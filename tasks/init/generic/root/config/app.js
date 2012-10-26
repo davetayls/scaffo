@@ -1,7 +1,10 @@
 /*jshint node:true,strict:false */
 var hbs        = require('hbs'), // handlebars templating
     templating = require('./templating'),
-    routes     = require('./routes')
+    routes     = require('./routes'),
+    preferences = require('./preferences.json'),
+
+    join       = require('path').join
 ;
 exports.configure = function(express, app, rootDir){
 
@@ -11,7 +14,7 @@ exports.configure = function(express, app, rootDir){
     app.configure(function(){
 
       // set which folder to get the template prototypes from
-      app.set('views', rootDir + '/templates');
+      app.set('views', join(rootDir, preferences.templates_path));
 
       // use html files for the main site building
       app.set('view engine', 'html');
@@ -23,7 +26,9 @@ exports.configure = function(express, app, rootDir){
       app.use(app.router);
 
       // make the ui folder public
-      app.use('/ui', express.static(rootDir + '/ui'));
+      app.use(express.static(join(rootDir, preferences.integrated_path)));
+      app.use(express.static(join(rootDir, 'scripts')));
+      app.use(express.static(join(rootDir, 'lib')));
 
       // if something goes wrong!
       app.use(function(err, req, res, next) {

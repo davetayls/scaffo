@@ -1,3 +1,8 @@
+var preferences = require('./config/preferences.json'),
+
+    join       = require('path').join
+;
+
 module.exports = function(grunt) {
   "use strict";
 
@@ -14,14 +19,14 @@ module.exports = function(grunt) {
     lint: {
       files: [
         "grunt.js",
-        "ui/scripts/**/*.js"
+        "scripts/**/*.js"
       ]
     },
 
     watch: {
       styles: {
         files: [
-          "ui/styles/**/*.styl"
+          "styles/**/*.styl"
         ],
         tasks: "styles"
       },
@@ -56,12 +61,12 @@ module.exports = function(grunt) {
     requirejs: {
       dist: {
         options: {
-          mainConfigFile: "ui/scripts/config.js",
+          mainConfigFile: "scripts/config.js",
           // output to
-          out: "ui/dist/main.js",
+          out: "integrated/ui/dist/main.js",
 
           // config
-          baseUrl: "ui/scripts",
+          baseUrl: "scripts",
           name: 'config',
           optimize: 'none'
         }
@@ -75,11 +80,11 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          "ui/lib/require.js",
-          "ui/dist/main.js"
+          "lib/require.js",
+          "integrated/ui/dist/main.js"
         ],
 
-        dest: "ui/dist/require.js",
+        dest: "integrated/ui/dist/require.js",
 
         separator: ";"
       }
@@ -90,15 +95,15 @@ module.exports = function(grunt) {
         options: {
           compress: false,
           paths: [
-            'ui/styles',
-            'ui/lib',
+            'styles',
+            'lib',
             'node_modules/nib/lib'
           ]
         },
         files: {
-          'ui/dist/styles.css': 'ui/styles/index.styl',
-          'ui/dist/tablet.css': 'ui/styles/**/*.tablet.styl',
-          'ui/dist/desktop.css': 'ui/styles/**/*.desktop.styl'
+          'integrated/ui/dist/styles.css': 'styles/index.styl',
+          'integrated/ui/dist/tablet.css': 'styles/**/*.tablet.styl',
+          'integrated/ui/dist/desktop.css': 'styles/**/*.desktop.styl'
         }
       }
     }

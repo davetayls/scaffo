@@ -124,8 +124,18 @@ Then you can use the data in a template or partial:
 ### Prototype Server Configuration
 
     config              : The server and templating configuration
+    preferences.json
     app.js
     grunt.js
     package.json
 
+#### Preferences
 
+  "integrated_path": "integrated"
+
+This is the path to files which will be shared with
+the main website.
+
+  "templates_path": "templates"
+
+The path to the page templates

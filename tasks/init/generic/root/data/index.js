@@ -6,7 +6,9 @@ exports.get = function(app){
 
 	var options = {};
 	require("fs").readdirSync("./data").forEach(function(file) {
-		_.extend(options, require("./" + file));
+		if (/.*\.js$/.test(file)){
+			_.extend(options, require("./" + file));
+		}
 	});
 	return options;
 };

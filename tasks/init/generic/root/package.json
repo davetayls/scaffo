@@ -16,7 +16,7 @@
     },
     "devDependencies": { },
     "volo": {
-        "baseUrl": "ui/lib",
+        "baseUrl": "lib",
         "dependencies": {
             "jquery": "jquery",
             "require": "jrburke/requirejs"

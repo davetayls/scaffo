@@ -1,7 +1,10 @@
 /*jshint node:true */
 var hbs        = require('hbs'), // handlebars templating
     handlebars = hbs.handlebars,
-    fs         = require('fs')
+    fs         = require('fs'),
+    preferences = require('./preferences.json'),
+
+    join       = require('path').join
 ;
 exports.configure = function(app, rootDir){
     "use strict";
@@ -11,7 +14,8 @@ exports.configure = function(app, rootDir){
      */
     function partial (relativeDir) {
         return function(name, items, context) {
-            var tmpl = handlebars.compile(fs.readFileSync(rootDir + relativeDir + name +'.html', 'utf8'));
+            var templatePath = join(rootDir, relativeDir),
+                tmpl = handlebars.compile(fs.readFileSync(templatePath + name +'.html', 'utf8'));
             return tmpl({
                 items: items,
                 context: this,
@@ -20,8 +24,8 @@ exports.configure = function(app, rootDir){
         };
     }
 
-    hbs.registerHelper('partial', partial('/templates/partials/'));
-    hbs.registerHelper('template', partial('/ui/templates/'));
+    hbs.registerHelper('partial', partial(preferences.templates_path + '/partials/'));
+    hbs.registerHelper('template', partial(preferences.integrated_path + '/ui/templates/'));
 
     /**
      * Blocks
