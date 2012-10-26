@@ -67,6 +67,6 @@ module.exports = function(grunt) {
   grunt.registerTask("build", "lint test");
 
   // Default task.
-  grunt.registerTask("default", "h:install");
+  // grunt.registerTask("default", "h:install");
 
 };

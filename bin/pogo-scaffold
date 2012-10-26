@@ -4,5 +4,37 @@ var grunt = require("grunt"),
     join = require('path').join,
     gruntRoot = join(__dirname, '../')
 ;
+
 grunt.npmTasks(gruntRoot);
+
+function help() {
+    var pkg = require(__dirname + "/../package.json");
+    grunt.log.writeln();
+    grunt.log.writeln(pkg.description);
+    grunt.log.writeln((" " + pkg.name + " ").green.inverse
+        + " Version - " + pkg.version);
+
+    grunt.log.header(("Installation").yellow);
+    grunt.log.writeln();
+
+    grunt.log.header("In terminal window");
+
+    grunt.log.writeln("    $ mkdir myPrototypeSite");
+    grunt.log.writeln("    $ cd myPrototypeSite");
+    grunt.log.writeln("    $ pogo-scaffold init:generic");
+    grunt.log.writeln("    ...");
+    grunt.log.writeln("    $ npm install");
+    grunt.log.writeln("    $ pogo-scaffold watch-dev");
+
+    grunt.log.header("Open a new terminal window");
+
+    grunt.log.writeln("    $ node app");
+
+    grunt.log.writeln();
+}
+
+// show help if passed with no arguments
+if (process.argv.length === 2) {
+  return help();
+}
 grunt.cli();

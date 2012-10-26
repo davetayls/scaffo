@@ -88,7 +88,7 @@ module.exports = function(grunt) {
     stylus: {
       dist: {
         options: {
-          compress: true,
+          compress: false,
           paths: [
             'ui/styles',
             'ui/lib',
