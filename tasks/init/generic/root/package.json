@@ -16,10 +16,12 @@
     },
     "devDependencies": { },
     "volo": {
-        "baseUrl": "lib",
+        "baseUrl": "ui/lib",
         "dependencies": {
             "jquery": "jquery",
-            "require": "jrburke/requirejs"
+            "require": "jrburke/requirejs",
+            "matchMedia/matchMedia.js": "paulirish/matchMedia.js#matchMedia.js",
+            "matchMedia/matchMedia.addListener.js": "paulirish/matchMedia.js#matchMedia.addListener.js"
         }
     },
     "scripts": {

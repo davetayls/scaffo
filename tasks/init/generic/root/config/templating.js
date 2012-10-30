@@ -25,7 +25,7 @@ exports.configure = function(app, rootDir){
     }
 
     hbs.registerHelper('partial', partial(preferences.templates_path + '/partials/'));
-    hbs.registerHelper('template', partial(preferences.integrated_path + '/ui/templates/'));
+    hbs.registerHelper('template', partial(preferences.ui_path + '/templates/'));
 
     /**
      * Blocks

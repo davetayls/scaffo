@@ -1,8 +1,9 @@
 /*global require,alert */
 require([
-	'jquery'
+	'jquery',
+	'ui'
 ],
-function($){
+function($, ui){
 	"use strict";
 
 	// put application logic here

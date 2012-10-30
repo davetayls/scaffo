@@ -1,17 +1,34 @@
 var preferences = require('./config/preferences.json'),
 
-    join       = require('path').join
+    join       = require('path').join,
+    uiPath     = join(__dirname, preferences.ui_path)
 ;
 
 module.exports = function(grunt) {
   "use strict";
 
+
+  // Stylus Configuration
+  var stylus = {
+    dist: {
+      options: {
+        compress: false,
+        paths: [
+          uiPath + '/styles',
+          uiPath + '/lib',
+          'node_modules/nib/lib'
+        ]
+      },
+      files: {}
+    }
+  };
+  stylus.dist.files[uiPath + '/dist/styles.css'] = uiPath + '/styles/index.styl';
+  stylus.dist.files[uiPath + '/dist/tablet.css'] = uiPath + '/styles/**/*.tablet.styl';
+  stylus.dist.files[uiPath + '/dist/desktop.css'] = uiPath + '/styles/**/*.desktop.styl';
+
   // Project configuration.
   grunt.initConfig({
 
-    volo: {
-      install: {}
-    },
     test: {
       files: ["test/**/*.js"]
     },
@@ -19,14 +36,14 @@ module.exports = function(grunt) {
     lint: {
       files: [
         "grunt.js",
-        "scripts/**/*.js"
+        uiPath + "/scripts/**/*.js"
       ]
     },
 
     watch: {
       styles: {
         files: [
-          "styles/**/*.styl"
+          uiPath + "/styles/**/*.styl"
         ],
         tasks: "styles"
       },
@@ -38,8 +55,12 @@ module.exports = function(grunt) {
       }
     },
 
+    // The stylus configuration is built above
+    stylus: stylus,
+
     jshint: {
       options: {
+        browser: true,
         curly: true,
         eqeqeq: true,
         immed: true,
@@ -61,12 +82,12 @@ module.exports = function(grunt) {
     requirejs: {
       dist: {
         options: {
-          mainConfigFile: "scripts/config.js",
+          mainConfigFile: uiPath + "/scripts/config.js",
           // output to
-          out: "integrated/ui/dist/main.js",
+          out: uiPath + "/dist/main.js",
 
           // config
-          baseUrl: "scripts",
+          baseUrl: uiPath + "/scripts",
           name: 'config',
           optimize: 'none'
         }
@@ -80,32 +101,20 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          "lib/require.js",
-          "integrated/ui/dist/main.js"
+          uiPath + "/lib/require.js",
+          uiPath + "/dist/main.js"
         ],
 
-        dest: "integrated/ui/dist/require.js",
+        dest: uiPath + "/dist/require.js",
 
         separator: ";"
       }
     },
 
-    stylus: {
-      dist: {
-        options: {
-          compress: false,
-          paths: [
-            'styles',
-            'lib',
-            'node_modules/nib/lib'
-          ]
-        },
-        files: {
-          'integrated/ui/dist/styles.css': 'styles/index.styl',
-          'integrated/ui/dist/tablet.css': 'styles/**/*.tablet.styl',
-          'integrated/ui/dist/desktop.css': 'styles/**/*.desktop.styl'
-        }
-      }
+    // The volo task is used to grab front-end dependecies
+    // like jQuery from the package.json file
+    volo: {
+      install: {}
     }
 
   });

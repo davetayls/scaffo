@@ -26,9 +26,7 @@ exports.configure = function(express, app, rootDir){
       app.use(app.router);
 
       // make the ui folder public
-      app.use(express.static(join(rootDir, preferences.integrated_path)));
-      app.use(express.static(join(rootDir, 'scripts')));
-      app.use(express.static(join(rootDir, 'lib')));
+      app.use('/ui', express.static(join(rootDir, preferences.ui_path)));
 
       // if something goes wrong!
       app.use(function(err, req, res, next) {

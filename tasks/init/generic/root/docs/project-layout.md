@@ -9,37 +9,44 @@ Project Layout
 The styling, scripting, images and other ui related files are found in the
 following folder structure within the project
 
-    /ui
-      |-- /lib             : Resources from external libraries and plugins
-      |                      used by the site but not written for the site
-      |                       - eg: jQuery library, jQuery plugins
-      |                       - Code in this folder should not be customised
-      |-- /scripts         : Root folder for custom JavaScript files for this
-      |                      site
-      |-- /styles          : Root folder for Stylus files
-      |-- /templates       : Root folder for simple templates which could be
-      |                      used in client side templating
-      |--/test             : Front-End test suites
+    /integrated              : This folder and contents could live in the
+      |                        main integrated website
+      |
+      /ui
+        |-- /templates       : Root folder for simple templates which could be
+        |                      used in client side templating
+        |-- /test            : Front-End test suites
+
+    /lib                     : Resources from external libraries and plugins
+      |                        used by the site but not written for the site
+      |                         - eg: jQuery library, jQuery plugins
+      |                         - Code in this folder should not be customised
+    /scripts                 : Root folder for custom JavaScript files for this
+      |                        site
+    /styles                  : Root folder for Stylus files
 
 
 ### Page Templates
 
+These are the prototype html files which build up your site and will probably
+corespond to a psd design.
+
 All page templates can be accessed from:
 
-- /                        : Loads the index.html page template
-- /template/templateName   : Loads the template named templateName.html
-- /template/path/name      : Loads a template in a sub directory
+- /                          : Loads the index.html page template
+- /template/templateName     : Loads the template named templateName.html
+- /template/path/name        : Loads a template in a sub directory
 
 Here is how this equates to the directory structure:
 
-    /templates             : The main page markup templates
-      |-- index.html       : The default page template to load
-      |                       - This only holds body content
-      |-- layout.html      : The main layout for the pages within this folder
-      |                       - Content in page templates will be placed where
-      |                         the {{{body}}} tag is
-      |-- /customFolder    : You can create sub folders for new layouts
-        |-- layout.html    : Page templates within this folder will use this layout
+    /templates               : The main page markup templates
+      |-- index.html         : The default page template to load
+      |                         - This only holds body content
+      |-- layout.html        : The main layout for the pages within this folder
+      |                         - Content in page templates will be placed where
+      |                           the {{{body}}} tag is
+      |-- /customFolder      : You can create sub folders for new layouts
+        |-- layout.html      : Page templates within this folder will use this layout
 
 
 ### Nested templates and partials
@@ -60,9 +67,11 @@ You can include a template in your markup by using the following tag.
 It will then look for a file called `templateName.html` within the following
 directory:
 
-    /ui
-      |-- /templates
-        |-- templateName.html
+    /integrated
+      |
+      /ui
+        |-- /templates
+          |-- templateName.html
 
 These templates should be very simple and cannot have nested templates within them
 
@@ -92,7 +101,7 @@ and have it generate markup for a list.
 
 You can create dummy JSON data in the following way.
 
-    data                : Dummy data
+    data                : Dummy data folder
       |-- breadcrumb.js : Example dummy data
       |-- index.js      : Functionality to automatically make data available
 
@@ -100,7 +109,7 @@ You can create dummy JSON data in the following way.
 
 Structure your data file like this:
 
-    exports.dataName = [
+    exports.people = [
       {
           firstname: "Peter",
           surname: "Smith"
@@ -124,17 +133,16 @@ Then you can use the data in a template or partial:
 ### Prototype Server Configuration
 
     config              : The server and templating configuration
-    preferences.json
-    app.js
-    grunt.js
-    package.json
+    preferences.json    : Folder locations and other prefs
+    app.js              : Simple server
+    grunt.js            : Grunt automation tasks
+    package.json        : Dependencies and application details
 
 #### Preferences
 
-  "integrated_path": "integrated"
+  "ui_path": "ui"
 
-This is the path to files which will be shared with
-the main website.
+This is the path to files which will be shared with the main website.
 
   "templates_path": "templates"
 
