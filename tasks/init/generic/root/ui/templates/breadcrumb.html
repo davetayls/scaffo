@@ -1,9 +1,9 @@
 <ul class="breadcrumb">
   {{#items}}
-    {{#url}}
+    {{#if url}}
     <li>
       <a href="{{url}}">
-    {{/url}}
+    {{/if}}
     {{^url}}
     <li class="active">
     {{/url}}

@@ -1,6 +1,7 @@
 /*jshint node:true */
 var hbs        = require('hbs'), // handlebars templating
     handlebars = hbs.handlebars,
+    _          = require('underscore'),
     fs         = require('fs'),
     preferences = require('./preferences.json'),
 
@@ -13,14 +14,14 @@ exports.configure = function(app, rootDir){
      * Partials
      */
     function partial (relativeDir) {
-        return function(name, items, context) {
+        return function(name) {
             var templatePath = join(rootDir, relativeDir),
-                tmpl = handlebars.compile(fs.readFileSync(templatePath + name +'.html', 'utf8'));
-            return tmpl({
-                items: items,
-                context: this,
-                app: app.locals
-            });
+                tmpl = handlebars.compile(fs.readFileSync(templatePath + name +'.html', 'utf8')),
+                items = arguments.length === 3 ? arguments[1] : [],
+                innerTmpl = arguments.length === 3 ? arguments[2] : arguments[1];
+
+            this.items = items;
+            return tmpl(this);
         };
     }
 
