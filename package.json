@@ -1,17 +1,16 @@
 {
-  "name": "pogo-scaffold",
+  "name": "scaffo",
   "description": "Code project launcher",
-  "version": "0.0.10",
+  "version": "0.0.1",
   "author": {
     "name": "Dave Taylor",
-    "email": "dave.taylor@pogokid.com",
-    "url": "http://pogokid.com"
+    "email": "dave@the-taylors.org",
+    "url": "http://the-taylors.org"
   },
-  "bin": "bin/pogo-scaffold",
-  "main": "grunt.js",
+  "bin": "bin/scaffo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pogokid/pogo.git"
+    "url": "https://github.com/davetayls/scaffo.git"
   },
   "keywords": [
     "scaffolding"
@@ -20,7 +19,13 @@
     "grunt": "0.3.x"
   },
   "devDependencies": {
-    "grunt-contrib-copy": "0.3.x"
+    "grunt-contrib-copy": "0.3.x",
+    "mocha": "1.6.x",
+    "npm": "1.1.x",
+    "request": "2.11.x"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "license": "MIT"
 }

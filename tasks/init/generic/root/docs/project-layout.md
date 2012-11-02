@@ -19,7 +19,7 @@ following folder structure within the project
       |-- /styles          : Root folder for Stylus files
       |-- /templates       : Root folder for simple templates which could be
       |                      used in client side templating
-      |--/test             : Front-End test suites
+      |-- /test            : Front-End test suites
 
 
 ### Page Templates
@@ -100,34 +100,40 @@ You can create dummy JSON data in the following way.
 
 Structure your data file like this:
 
-    exports.people = [
-      {
-          firstname: "Peter",
-          surname: "Smith"
-      },
-      ...
-    ];
+    exports.people = {
+      group: "housewives",
+      people: [
+          {
+              firstname: "Peter",
+              surname: "Smith"
+          },
+          ...
+        ]
+  };
 
 Send the data to a template or partial
 
-    {{#template "templateName" dataName}}{{/template}}
+    {{#template "templateName" people}}{{/template}}
 
 Then you can use the data in a template or partial:
 
+    <h2>{{group}}</h2>
     <ul>
-    {{#items}}
+    {{#people}}
         <li>{{firstname}} {{surname}}</li>
-    {{/items}}
+    {{/people}}
     </ul>
 
 
 ### Prototype Server Configuration
 
-    config              : The server and templating configuration
-    preferences.json    : Folder locations and other prefs
-    app.js              : Simple server
-    grunt.js            : Grunt automation tasks
-    package.json        : Dependencies and application details
+    /config                   : The server and templating configuration
+      |-- preferences.json    : Folder locations and other prefs
+    /app.js                   : Simple server using Express <http://expressjs.com>
+    /grunt.js                 : Grunt automation tasks <http://gruntjs.com>
+    /package.json             : Dependencies and application details
+                                 - Cheatsheet <http://package.json.jit.su/>
+                                 - CommonJs spec <http://wiki.commonjs.org/wiki/Packages/1.0>
 
 #### Preferences
 

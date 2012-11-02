@@ -24,7 +24,7 @@ exports.configure = function(app, rootDir){
         };
     }
 
-    hbs.registerHelper('partial', partial(preferences.templates_path + '/partials/'));
+    hbs.registerHelper('partial', partial(preferences.partials_path + '/'));
     hbs.registerHelper('template', partial(preferences.ui_path + '/templates/'));
 
     /**
