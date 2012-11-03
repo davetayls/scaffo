@@ -11,7 +11,10 @@ exports.configure = function(app, rootDir){
     "use strict";
 
     /**
-     * Partials
+     * Generate a helper function which will compile an external
+     * template based in a particular relative directory
+     * @param  {string} relativeDir directory to find the partial
+     * @return {function}
      */
     function partial (relativeDir) {
         return function(name) {
@@ -28,9 +31,6 @@ exports.configure = function(app, rootDir){
     hbs.registerHelper('partial', partial(preferences.partials_path + '/'));
     hbs.registerHelper('template', partial(preferences.ui_path + '/templates/'));
 
-    /**
-     * Blocks
-     */
     var blocks = {};
     // A helper which allows you to specify the
     // contents of an external {{{block "name"}}}
