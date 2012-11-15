@@ -1,3 +1,14 @@
+
+Installation
+--
+
+  npm install -g scaffo
+  mkdir myProject
+  cd myProject
+  scaffo init:generic
+
+
+
 Project Scaffolding
 --
 
