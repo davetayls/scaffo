@@ -21,8 +21,8 @@ Project Scaffolding
 		* Questions
 			* Is this a responsive heavy site?
 		* Load in throttle-debounce https://github.com/cowboy/jquery-throttle-debounce
-			 * Lodash?
-					* use custom lodash builder to remove functionality not needed like template
+			* Lodash?
+				* use custom lodash builder to remove functionality not needed like template
 4. CSS folder
 	* Clear
 	* Add Sass/Stylus
@@ -41,58 +41,60 @@ Project Scaffolding
 7. Build and watch
 	* Add grunt file
 9. Unit test
-		* Mocha
-		* phantom JS
+	* Mocha
+	* phantom JS
 
 Decisions
 --
 
-	1. Templating language
-		* Handlebars
-			* with require plugin https://github.com/SlexAxton/require-handlebars-plugin
+1. Templating language
+	* Handlebars
+		* with require plugin https://github.com/SlexAxton/require-handlebars-plugin
 		* Dust.js http://akdubya.github.com/dustjs/
 			* Used by LinkedIn https://engineering.linkedin.com/frontend/client-side-templating-throwdown-mustache-handlebars-dustjs-and-more
-	2. Responsive Design
-		* Responsive Tables solution http://www.zurb.com/playground/playground/responsive-tables/index.html
-		* Catering for ie < 9 http://the-taylors.org/blog/2012/09/02/responsive-styles-respecting-old-ie-6-7-8
-	3. CSS Declarations
-		1. BEM
-		2. Grouping
-			1. Font
-			2. Color
-			3. Display
-			4. Float
-			5. Box Model
-				1. width
-				2. height
-				3. padding
-				4. margin
-				5. border
-			7. Background
+
+2. Responsive Design
+	* Responsive Tables solution http://www.zurb.com/playground/playground/responsive-tables/index.html
+	* Catering for ie < 9 http://the-taylors.org/blog/2012/09/02/responsive-styles-respecting-old-ie-6-7-8
+
+3. CSS Declarations
+	1. BEM
+	2. Grouping
+		1. Font
+		2. Color
+		3. Display
+		4. Float
+		5. Box Model
+			1. width
+			2. height
+			3. padding
+			4. margin
+			5. border
+		6. Background
 
 CSS Frameworks
 --
 
-Sass
-	* Inuit.css [Sass] https://github.com/csswizardry/inuit.css
-	* Compass http://compass-style.org/
-	* Bourbon http://thoughtbot.com/bourbon/
+### Sass
+* Inuit.css [Sass] https://github.com/csswizardry/inuit.css
+* Compass http://compass-style.org/
+* Bourbon http://thoughtbot.com/bourbon/
 
-Less
-	* Twitter Bootstrap [Less]
+### Less
+* Twitter Bootstrap [Less]
 
-Stylus
-	* Nib [Stylus] http://visionmedia.github.com/nib/
+### Stylus
+* Nib [Stylus] http://visionmedia.github.com/nib/
 
 Standards Guidelines
 --
 
-CSS
-	* https://github.com/csswizardry/CSS-Guidelines
-	* http://smacss.com/
-	* https://github.com/necolas/idiomatic-css
-	* BEM http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
+### CSS
+* https://github.com/csswizardry/CSS-Guidelines
+* http://smacss.com/
+* https://github.com/necolas/idiomatic-css
+* BEM http://coding.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/
 
-JavaScript
-	* https://github.com/necolas/idiomatic-js
+### JavaScript
+* https://github.com/necolas/idiomatic-js
 
