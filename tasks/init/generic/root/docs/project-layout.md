@@ -119,9 +119,9 @@ Then you can use the data in a template or partial:
 
     <h2>{{group}}</h2>
     <ul>
-    {{#people}}
+    {{#items}}
         <li>{{firstname}} {{surname}}</li>
-    {{/people}}
+    {{/items}}
     </ul>
 
 
