@@ -4,6 +4,7 @@
     "author": "davetayls <dave@the-taylors.org>",
     "description": "",
     "keywords": [],
+    "main": "app.js",
     "dependencies" : {
         "grunt-contrib-requirejs": "0.3.x",
         "grunt-contrib-stylus": "0.3.x",
@@ -12,7 +13,7 @@
         "volo": "0.2.x",
         "express": "3.x.x",
         "underscore": "1.4.x",
-        "hbs": "https://github.com/davetayls/hbs/tarball/master"
+        "hbs": "2.0.x"
     },
     "devDependencies": { },
     "volo": {
