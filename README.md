@@ -9,6 +9,9 @@ Installation
 	cd myProject
 	scaffo init:generic
 
+Documentation
+--
+[Docs for the generic scaffold](https://github.com/davetayls/scaffo/tree/master/tasks/init/generic/root/docs)
 
 
 Project Scaffolding
