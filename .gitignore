@@ -14,7 +14,10 @@ results
 node_modules
 npm-debug.log
 
-tasks/init/generic/root/ui/lib/jquery.js
-tasks/init/generic/root/ui/lib/matchMedia/matchMedia.addListener.js
-tasks/init/generic/root/ui/lib/matchMedia/matchMedia.js
-tasks/init/generic/root/ui/lib/require.js
+root/ui/lib/jquery.js
+root/ui/lib/matchMedia/matchMedia.addListener.js
+root/ui/lib/matchMedia/matchMedia.js
+root/ui/lib/require.js
+root/ui/dist
+root/ui/dev
+

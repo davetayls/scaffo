@@ -10,17 +10,14 @@ module.exports = function(grunt) {
   /**
    * Main task names
    */
-  // Default task.
-  grunt.registerTask("default", ["lint","scripts","styles"]);
+  grunt.registerTask("default", ["jshint", "scripts", "styles"]);
+  grunt.registerTask("dev", ["jshint", "stylus:dev", "watch"]);
 
-  // other tasks
+  // sub tasks
   grunt.registerTask("install", ["volo:add"]);
-  grunt.registerTask("scripts", ["requirejs","concat"]);
-  grunt.registerTask("styles", ["stylus"]);
+  grunt.registerTask("scripts", ["requirejs:dist", "concat"]);
+  grunt.registerTask("styles", ["stylus:dist"]);
 
-  // watch tasks
-  grunt.registerTask("watch-dev", "default","watch:styles");
-  grunt.registerTask("watch-dist", ["default","watch"]);
 
   /**
    * => Stylus Configuration
@@ -86,24 +83,19 @@ module.exports = function(grunt) {
     // The compression configuration is built above (https://github.com/mishoo/UglifyJS)
     uglify: uglify,
 
-    // Javascript Unit Tests
-    test: {
-      files: ["test/**/*.js"]
-    },
-
     // file watcher using grunt-contrib-watch
     watch: {
       styles: {
         files: [
           uiPath + "/styles/**/*.styl"
         ],
-        tasks: "styles"
+        tasks: "stylus:dev"
       },
       scripts: {
         files: [
           uiPath + "/scripts/**/*.js"
         ],
-        tasks: "scripts"
+        tasks: "jshint"
       }
     },
 
@@ -111,9 +103,11 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         "grunt.js",
-        uiPath + "/js/**/*.js"
+        uiPath + "/scripts/**/*.js"
       ],
-      jshintrc: '.jshintrc'
+      options: {
+        jshintrc: '.jshintrc'
+      }
     },
 
     // This task uses James Burke's excellent r.js AMD build tool.  In the
@@ -148,12 +142,6 @@ module.exports = function(grunt) {
 
         separator: ";"
       }
-    },
-
-    // The volo task is used to grab front-end dependecies
-    // like jQuery from the package.json file
-    volo: {
-      install: {}
     }
 
   });
@@ -171,7 +159,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-volo');
-
 
 };

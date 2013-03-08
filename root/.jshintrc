@@ -7,17 +7,20 @@
   "noarg": true,
   "sub": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "boss": true,
   "eqnull": false,
-  "node": true,
   "es5": false,
 
+  "browser": true,
+  "node": true,
 
   "maxparams": 3,
   "maxdepth": 4,
   "maxcomplexity": 4,
   "maxstatements": 10,
 
-  "globals": {}
+  "globals": {
+    "define": true
+  }
 }

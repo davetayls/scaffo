@@ -1,4 +1,3 @@
-/*global require,alert */
 require([
 	'jquery',
 	'ui'
