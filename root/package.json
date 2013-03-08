@@ -6,10 +6,17 @@
     "keywords": [],
     "main": "app.js",
     "dependencies" : {
-        "grunt-contrib-requirejs": "0.3.x",
-        "grunt-contrib-stylus": "0.3.x",
-        "nib": "0.8.x",
+        "grunt": "0.4.x",
+        "grunt-contrib-watch": "0.3.x",
+        "grunt-contrib-requirejs": "0.4.x",
+        "grunt-contrib-stylus": "0.4.x",
+        "grunt-contrib-jshint": "~0.1.1",
+        "grunt-contrib-concat": "~0.1.2",
+        "grunt-contrib-uglify": "~0.1.1",
+        "grunt-contrib-qunit": "~0.2.0",
+
         "grunt-volo": "0.x.x",
+        "nib": "0.8.x",
         "volo": "0.2.x",
         "express": "3.x.x",
         "underscore": "1.4.x",
@@ -26,6 +33,6 @@
         }
     },
     "scripts": {
-        "install": "pogo-scaffold install"
+        "test": "grunt"
     }
 }
