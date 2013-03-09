@@ -1,0 +1,12 @@
+body {
+    background-color: #eee;
+}
+#tests {
+    margin: 20px;
+}
+@media all and (min-width: 990px){
+    #tests {
+        width: 800px;
+        margin: 20px auto;
+    }
+}
