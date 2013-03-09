@@ -204,10 +204,14 @@
             b.qunit();
             b.expect([
                 {
+                    selector: 'h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,blockquote',
+                    baseline: 8
+                },
+                {
                     selector: 'h1',
                     css: {
-                        fontSize: '39px',
-                        lineHeight: 'normal'
+                        fontSize: '20px',
+                        lineHeight: '24px'
                     }
                 }
             ]);
