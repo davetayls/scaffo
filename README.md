@@ -1,5 +1,8 @@
 
-A quick site prototyping system.
+Scaffo
+======
+
+Scaffo is a quick-start Front-End Prototyping Site, but also includes the implementation of my personal code and architecture decisions.
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
