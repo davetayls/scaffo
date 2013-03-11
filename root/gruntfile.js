@@ -83,6 +83,11 @@ module.exports = function(grunt) {
     // The compression configuration is built above (https://github.com/mishoo/UglifyJS)
     uglify: uglify,
 
+    // the qunit test runner for JavaScript unit tests and Brand Style tests
+    qunit: {
+      all: ['ui/test/**/*.html']
+    },
+
     // file watcher using grunt-contrib-watch
     watch: {
       styles: {

@@ -1,0 +1,248 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GEL - Forms</title>
+    <link rel="stylesheet" href="../lib/qunit.css">
+    <link href="gel.css" rel="stylesheet" type="text/css" />
+    <link href="../../dev/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <div id="container"></div>
+
+    <div id="tests">
+        <h2>Simple form</h2>
+        <form>
+          <fieldset>
+            <legend>Legend</legend>
+            <label>Label name</label>
+            <input type="text" placeholder="Type something…">
+            <span class="help-block">Example block-level help text here.</span>
+            <label class="checkbox">
+              <input type="checkbox"> Check me out
+            </label>
+          <button type="submit" class="btn">Submit</button>
+          </fieldset>
+        </form>
+
+        <h2>Inline Form</h2>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <label class="checkbox">
+            <input type="checkbox"> Remember me
+          </label>
+          <button type="submit" class="btn">Sign in</button>
+        </form>
+
+        <h2>Horizontal Form</h2>
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+              <input type="text" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+              <input type="password" id="inputPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <input type="checkbox"> Remember me
+              </label>
+              <button type="submit" class="btn">Sign in</button>
+            </div>
+          </div>
+        </form>
+
+        <h2>Checkboxes and Radios</h2>
+        <h3>Stacked</h3>
+        <label class="checkbox">
+          <input type="checkbox" value="">
+          Option one is this and that—be sure to include why it's great
+        </label>
+
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Option one is this and that—be sure to include why it's great
+        </label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+
+        <h3>Inline</h3>
+        <label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+        </label>
+
+
+        <h2>Selects</h2>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <select multiple="multiple">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <h2>Uneditable Inputs</h2>
+        <span class="input-xlarge uneditable-input">Some value here</span>
+
+        <h2>Form Actions</h2>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn">Cancel</button>
+        </div>
+
+        <h2>Help Text</h2>
+        <h3>Inline</h3>
+        <input type="text"><span class="help-inline">Inline help text</span>
+        <h3>Block</h3>
+        <input type="text"><span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+
+        <h2>Disabled Inputs</h2>
+        <input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+
+        <h2>Validation States</h2>
+        <div class="control-group warning">
+          <label class="control-label" for="inputWarning">Input with warning</label>
+          <div class="controls">
+            <input type="text" id="inputWarning">
+            <span class="help-inline">Something may have gone wrong</span>
+          </div>
+        </div>
+
+        <div class="control-group error">
+          <label class="control-label" for="inputError">Input with error</label>
+          <div class="controls">
+            <input type="text" id="inputError">
+            <span class="help-inline">Please correct the error</span>
+          </div>
+        </div>
+
+        <div class="control-group info">
+          <label class="control-label" for="inputInfo">Input with info</label>
+          <div class="controls">
+            <input type="text" id="inputInfo">
+            <span class="help-inline">Username is already taken</span>
+          </div>
+        </div>
+
+        <div class="control-group success">
+          <label class="control-label" for="inputSuccess">Input with success</label>
+          <div class="controls">
+            <input type="text" id="inputSuccess">
+            <span class="help-inline">Woohoo!</span>
+          </div>
+        </div>
+
+        <h2>Buttons</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Button</th>
+                <th>class=""</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><button type="button" class="btn">Default</button></td>
+                <td><code>btn</code></td>
+                <td>Standard gray button with gradient</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-primary">Primary</button></td>
+                <td><code>btn btn-primary</code></td>
+                <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-info">Info</button></td>
+                <td><code>btn btn-info</code></td>
+                <td>Used as an alternative to the default styles</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-success">Success</button></td>
+                <td><code>btn btn-success</code></td>
+                <td>Indicates a successful or positive action</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-warning">Warning</button></td>
+                <td><code>btn btn-warning</code></td>
+                <td>Indicates caution should be taken with this action</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-danger">Danger</button></td>
+                <td><code>btn btn-danger</code></td>
+                <td>Indicates a dangerous or potentially negative action</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-inverse">Inverse</button></td>
+                <td><code>btn btn-inverse</code></td>
+                <td>Alternate dark gray button, not tied to a semantic action or use</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-link">Link</button></td>
+                <td><code>btn btn-link</code></td>
+                <td>Deemphasize a button by making it look like a link while maintaining button behavior</td>
+              </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="../../lib/jquery.js"></script>
+    <script src="../lib/qunit.js"></script>
+    <script src="../lib/qunit.js"></script>
+    <script src="../lib/brando.js"></script>
+    <script src="../lib/brando-qunit.js"></script>
+    <script src="gel.js"></script>
+
+    <script>
+        /**
+         * Expectations
+         */
+        ;(function($){
+
+            var b = new Brando();
+            b.qunit();
+            b.expect([
+                {
+                    selector: 'label',
+                    baseline: 8
+                }
+            ]);
+
+        })(jQuery);
+    </script>
+
+</body>
+</html>
