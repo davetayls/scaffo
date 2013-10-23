@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   /**
    * Main task names
    */
-  grunt.registerTask("default", ["jshint", "scripts", "styles"]);
+  grunt.registerTask("default", ["jshint", "scripts", "styles", "qunit"]);
   grunt.registerTask("dev", ["jshint", "stylus:dev", "watch"]);
 
   // sub tasks

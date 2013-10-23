@@ -19,12 +19,20 @@ exports.configure = function(app, rootDir){
     function partial (relativeDir) {
         return function(name) {
             var templatePath = join(rootDir, relativeDir),
-                tmpl = handlebars.compile(fs.readFileSync(templatePath + name +'.html', 'utf8')),
+                tmplString = fs.readFileSync(templatePath + name +'.html', 'utf8'),
+                tmpl = handlebars.compile(tmplString),
+                // ("parialName", )
                 items = arguments.length === 3 ? arguments[1] : [],
-                innerTmpl = arguments.length === 3 ? arguments[2] : arguments[1];
+                options = arguments[arguments.length-1],
+                content,
+                context = _.extend({}, this, { items: items }, options.hash)
+            ;
+            if (options.fn){
+                content = options.fn(context);
+            }
+            _.extend(context, { content: content });
 
-            this.items = items;
-            return tmpl(this);
+            return tmpl(context);
         };
     }
 

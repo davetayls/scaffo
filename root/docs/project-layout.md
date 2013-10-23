@@ -26,9 +26,9 @@ following folder structure within the project
 
 All page templates can be accessed from:
 
-- /                        : Loads the index.html page template
-- /template/templateName   : Loads the template named templateName.html
-- /template/path/name      : Loads a template in a sub directory
+- /                              : Loads the index.html page template
+- /templates/templateName.html   : Loads the template named templateName.html
+- /templates/path/name.html      : Loads a template in a sub directory
 
 Here is how this equates to the directory structure:
 
@@ -55,7 +55,7 @@ This project uses [Handlebars.js](http://handlebarsjs.com/) for it's templating.
 
 You can include a template in your markup by using the following tag.
 
-    {{#template "templateName"}}{{/template}}
+    {{{template "templateName"}}}
 
 It will then look for a file called `templateName.html` within the following
 directory:
@@ -75,7 +75,7 @@ templating (often via ajax calls to a json service).
 
 You can include a partial in your markup by using the following tag.
 
-    {{#partial "templateName"}}{{/partial}}
+    {{{partial "templateName"}}}
 
 It will then look for a file called `templateName.html` within the following
 directory:

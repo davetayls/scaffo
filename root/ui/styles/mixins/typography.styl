@@ -13,7 +13,7 @@
 
 
 /*
-    => line-height
+    => baseline-height
     This renders a line-height as a unit-less number
     which will multiply the element's font-size to
     get the resulting line-height
@@ -33,10 +33,13 @@ baseline-grid()
 /*
     => font-size
 --------------------------------------------------*/
-font-size-rem($font-size)
-  font-size: ($font-size)px;
-  font-size: ($font-size / $font-size--base)rem;
-  baseline-height($font-size);
+font-size-rem($font-size, $line-height = false)
+  font-size: ($font-size)px
+  font-size: ($font-size / $font-size--base)rem
+  if $line-height
+    line-height: $line-height
+  else
+    baseline-height($font-size)
 
 font-size-em($font-size, $parent-font-size = $font-size--base)
   font-size: ($font-size / $parent-font-size)em;
